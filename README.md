@@ -1,2 +1,0 @@
-# Portfolio
-professional portfolio
