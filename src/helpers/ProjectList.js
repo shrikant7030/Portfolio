@@ -6,11 +6,6 @@ import marketplace from "../assets/marketplace.png"
 
 export const projectList = [
     {
-        name:'Healthcare Management System - website',
-        image: image1,
-        Skills : ''
-    },
-    {
         name:'Taskrunnr - Web App',
         image: taskrunnr,
         Skills : 'JavaScript, TypeScript, MongoDB, NodeJS, Angular, MaterialUI, Microservices, Auth0'
@@ -32,8 +27,13 @@ export const projectList = [
         Skills : 'JavaScript, NodeJS, Expresss, MongoDB, Angular, AWS-s3, AWS-lambda'
     },
     {
-        name:'Online Multiuser Game',
-        image: image1,
-        Skills : 'JavaScript, NodeJS, Expresss'
-    }
+        name:'Trigent - Shure Organization Portal',
+        image: marketplace,
+        Skills : 'Node + Typescript, DynamoDB, Angular, AWS-s3, AWS-lambda, MY-SQL, '
+    },
+    {
+        name:'Trigent - Pactrak TNG Application',
+        image: marketplace,
+        Skills : 'Node + Typescript, Express, MY-SQL, Angular, Azure(Functions, Blob-Storage, Azure B2C, )'
+    },
 ]
