@@ -19,16 +19,40 @@ export const profile = {
   phone: "+91 9561252643",
   linkedin: "https://www.linkedin.com/in/shrikant-goski-68455016b",
   github: "https://github.com/shrikant7030",
-  resume: "/resume.pdf",
+  // Lives in public/, so it is served as-is. `resumeFileName` is what the
+  // browser saves it as when the Download resume buttons are clicked.
+  resume: "/Shrikant_Goski_Resume.pdf",
+  resumeFileName: "Shrikant_Goski_Resume.pdf",
   summary:
     "I design and ship scalable backend systems — microservices, REST APIs and cloud-native automation — for enterprise clients. Most of my work lives in Node.js, NestJS and PostgreSQL, running on AWS and Azure.",
 };
+
+// Newest first — the Impact section and the hero stat both read from this.
+export const awards = [
+  {
+    title: "Sparkler Award",
+    org: "Trigent Software",
+    date: "Q1 2026",
+    description:
+      "Second Sparkler Award, again for driving backend automation and API optimization across client delivery.",
+  },
+  {
+    title: "Sparkler Award",
+    org: "Trigent Software",
+    date: "Q1 2024",
+    description:
+      "Awarded for driving backend automation and API optimization, measurably improving client delivery and system performance.",
+  },
+];
 
 export const stats = [
   { value: `${yearsOfExperience()}+`, label: "Years of experience" },
   { value: "100+", label: "REST APIs shipped" },
   { value: "50%", label: "Manual effort removed" },
-  { value: "1", label: "Sparkler Award" },
+  {
+    value: `${awards.length}`,
+    label: `Sparkler Award${awards.length === 1 ? "" : "s"}`,
+  },
 ];
 
 // `level` is a rough self-assessment (0-100) used for the proficiency bars.
@@ -39,7 +63,7 @@ export const skillGroups = [
     items: [
       { name: "JavaScript", level: 92 },
       { name: "TypeScript", level: 88 },
-      { name: "Java", level: 72 },
+      { name: "Java", level: 40 },
       { name: "SQL", level: 88 },
       { name: "C", level: 65 },
     ],
@@ -73,6 +97,7 @@ export const skillGroups = [
       { name: "Azure (Functions, B2C, Blob)", level: 82 },
       { name: "CI/CD & Git", level: 85 },
       { name: "RabbitMQ", level: 72 },
+      { name: "Kafka", level: 65 },
     ],
   },
   {
@@ -194,35 +219,5 @@ export const certifications = [
       "Data structures & algorithms",
       "Database design & optimization",
     ],
-  },
-];
-
-export const awards = [
-  {
-    title: "Sparkler Award",
-    org: "Trigent Software",
-    date: "Q1 2024",
-    description:
-      "Awarded for driving backend automation and API optimization, measurably improving client delivery and system performance.",
-  },
-];
-
-// TODO: replace these with real LinkedIn recommendations or manager quotes.
-// Delete any entry you don't have a genuine quote for — an empty array hides
-// the whole section.
-export const testimonials = [
-  {
-    quote:
-      "Add a recommendation here — paste the text of a LinkedIn recommendation or a note from a manager or client.",
-    author: "Name",
-    title: "Title, Company",
-    placeholder: true,
-  },
-  {
-    quote:
-      "A second short quote works well here. Two to four sentences reads best on the card.",
-    author: "Name",
-    title: "Title, Company",
-    placeholder: true,
   },
 ];

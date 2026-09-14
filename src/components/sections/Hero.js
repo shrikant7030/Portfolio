@@ -62,8 +62,7 @@ function Hero() {
           <a
             className="btn btn--primary"
             href={profile.resume}
-            target="_blank"
-            rel="noopener noreferrer"
+            download={profile.resumeFileName}
           >
             <DownloadIcon size={18} /> Download resume
           </a>

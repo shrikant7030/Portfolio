@@ -76,12 +76,6 @@ export const ArrowRightIcon = (p) => (
   </svg>
 );
 
-export const QuoteIcon = (p) => (
-  <svg {...base(p)}>
-    <path d="M7.17 6A5.17 5.17 0 0 0 2 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 0 1 7.17 9.5V6zm11 0A5.17 5.17 0 0 0 13 11.17V18h6.83v-6.83H16.5a1.67 1.67 0 0 1 1.67-1.67V6z" />
-  </svg>
-);
-
 export const MenuIcon = (p) => (
   <svg {...base(p)}>
     <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
