@@ -1,11 +1,25 @@
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "./Icons";
 
+/** "Shure Associate Portal" -> "SA", "Packtrak — Legacy Modernization" -> "PA" */
+export function projectInitials(name) {
+  const main = name.split("—")[0].trim();
+  const words = main.split(/\s+/).filter(Boolean);
+  const letters = words.length > 1 ? words[0][0] + words[1][0] : main.slice(0, 2);
+  return letters.toUpperCase();
+}
+
 function ProjectItem({ project }) {
   return (
     <Link to={`/projects/${project.slug}`} className="project-card">
-      <div className="project-card-media">
-        <img src={project.image} alt="" loading="lazy" />
+      <div className={`project-card-media ${project.image ? "" : "project-card-media--blank"}`}>
+        {project.image ? (
+          <img src={project.image} alt="" loading="lazy" />
+        ) : (
+          <span className="project-monogram" aria-hidden="true">
+            {projectInitials(project.name)}
+          </span>
+        )}
         <span className="project-card-category">{project.category}</span>
       </div>
 

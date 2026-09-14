@@ -27,23 +27,32 @@ function Impact() {
         </div>
 
         {awards.length > 0 && (
-          <div className="awards-row">
-            {awards.map((award, i) => (
-              <Reveal key={award.title} delay={i * 0.06}>
-                <article className="card award-card">
-                  <span className="award-icon">
-                    <StarIcon size={22} />
-                  </span>
-                  <div>
-                    <h3 className="award-title">{award.title}</h3>
-                    <p className="award-meta">
-                      {award.org} &middot; {award.date}
-                    </p>
-                    <p className="award-description">{award.description}</p>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
+          <div className="awards-block">
+            <Reveal>
+              <h3 className="awards-heading">
+                Awards &amp; recognition
+                {awards.length > 1 && <span className="awards-count">{awards.length}</span>}
+              </h3>
+            </Reveal>
+
+            <div className="awards-row">
+              {awards.map((award, i) => (
+                <Reveal key={`${award.title}-${award.date}`} delay={i * 0.06}>
+                  <article className="card award-card">
+                    <span className="award-icon">
+                      <StarIcon size={22} />
+                    </span>
+                    <div>
+                      <h4 className="award-title">{award.title}</h4>
+                      <p className="award-meta">
+                        {award.org} &middot; {award.date}
+                      </p>
+                      <p className="award-description">{award.description}</p>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
           </div>
         )}
       </div>

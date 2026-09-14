@@ -289,15 +289,46 @@
   color: var(--text-muted);
 }
 
+.awards-block {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.awards-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  font-size: 1.15rem;
+}
+
+.awards-count {
+  display: grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: var(--gradient);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
 .awards-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 20px;
-  margin-top: 24px;
+}
+
+.awards-row > * {
+  height: 100%;
 }
 
 .award-card {
   display: flex;
+  height: 100%;
   gap: 18px;
   align-items: flex-start;
   background: linear-gradient(135deg, var(--accent-soft), transparent 60%), var(--surface);
@@ -317,6 +348,7 @@
 
 .award-title {
   font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .award-meta {
@@ -328,73 +360,6 @@
 .award-description {
   font-size: 0.92rem;
   color: var(--text-secondary);
-}
-
-/* ==========================================================================
-   Testimonials
-   ========================================================================== */
-
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-}
-
-.testimonial-card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin: 0;
-}
-
-.testimonial-card--placeholder {
-  border-style: dashed;
-}
-
-.testimonial-quote-icon {
-  color: var(--accent);
-  opacity: 0.5;
-}
-
-.testimonial-quote {
-  margin: 0;
-  flex: 1;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-}
-
-.testimonial-avatar {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--gradient);
-  color: #fff;
-  font-weight: 700;
-}
-
-.testimonial-name {
-  display: block;
-  font-size: 0.94rem;
-  color: var(--text);
-}
-
-.testimonial-role {
-  display: block;
-  font-size: 0.82rem;
-  color: var(--text-muted);
 }
 
 /* ==========================================================================

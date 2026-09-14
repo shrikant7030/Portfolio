@@ -33,7 +33,7 @@ src/
 ├── App.css                 # design tokens + shared component classes
 ├── context/ThemeContext.js # dark/light theme, persisted to localStorage
 ├── data/
-│   ├── profile.js          # bio, skills, achievements, experience, testimonials
+│   ├── profile.js          # bio, skills, achievements, experience, awards
 │   └── projects.js         # project case studies
 ├── components/
 │   ├── Icons.js            # shared inline SVG icon set
@@ -42,7 +42,7 @@ src/
 │   ├── Reveal.js           # scroll-into-view fade wrapper
 │   ├── ScrollToTop.js      # route-change scroll handling (incl. #hash)
 │   ├── ProjectItem.js
-│   └── sections/           # Hero, Skills, Impact, Testimonials, Contact
+│   └── sections/           # Hero, Skills, Impact, Contact
 ├── Pages/                  # Home, Projects, ProjectDisplay, Experience, NotFound
 └── styles/                 # one stylesheet per page/component
 ```
@@ -63,9 +63,8 @@ Everything on the site reads from two files — you should rarely need to touch 
   outcome-shaped: a metric, a short title, one sentence of context.
 - **`experiences`** — the Experience timeline. Set `current: true` on your
   present role to get the live badge.
-- **`testimonials`** — **currently placeholder text.** Replace the entries with
-  real LinkedIn recommendations or manager quotes and drop the
-  `placeholder: true` flag. An empty array hides the section entirely.
+- **`awards`** — newest first. The hero stat tile counts and pluralises this
+  array automatically, so adding an award is a one-place edit.
 
 ### `src/data/projects.js`
 
@@ -74,16 +73,22 @@ for client work you cannot share and those buttons simply will not render.
 `slug` becomes the URL (`/projects/<slug>`), so avoid changing it on a project
 you have already shared a link to.
 
+`image` is optional as well. Packtrak, Shure Associate Portal and Order
+Management System are currently `null`: their cards fall back to a generated
+monogram tile and their case studies drop the hero image. To add a real
+screenshot, drop the file in `src/assets/`, import it at the top of the file,
+and set `image:` to that import.
+
 ## Before you deploy
 
 1. **Add your resume** at `public/resume.pdf` — the Download resume buttons in
    the navbar, hero and Experience page all point there.
-2. **Replace the testimonial placeholders** in `src/data/profile.js`.
-3. **Swap the project screenshots** in `src/assets/` — three of the entries
-   currently share the same placeholder image.
-4. **Add GitHub/live links** to any project in `src/data/projects.js` you can
+2. **Add the missing project screenshots** — Packtrak, Shure Associate Portal
+   and Order Management System have `image: null` and render a monogram tile
+   until you supply one.
+3. **Add GitHub/live links** to any project in `src/data/projects.js` you can
    share publicly.
-5. Optionally update the favicon and `logo192/512.png` in `public/` — they are
+4. Optionally update the favicon and `logo192/512.png` in `public/` — they are
    still the Create React App defaults, and `logo512.png` is used as the social
    share image.
 
