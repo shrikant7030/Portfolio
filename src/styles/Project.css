@@ -101,6 +101,54 @@
   background: linear-gradient(to top, rgba(15, 23, 42, 0.28), transparent 55%);
 }
 
+/* Fallback tile for projects with no screenshot yet — a monogram on a faint
+   grid, so the card reads as designed rather than as a broken image. */
+.project-card-media--blank {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(120% 120% at 25% 15%, var(--accent-soft), transparent 60%),
+    linear-gradient(150deg, var(--surface-strong), var(--surface));
+}
+
+.project-card-media--blank::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: 0.8;
+}
+
+.project-card-media--blank::after {
+  background: linear-gradient(to top, rgba(8, 11, 20, 0.35), transparent 60%);
+}
+
+:root[data-theme="light"] .project-card-media--blank::after {
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.12), transparent 60%);
+}
+
+.project-monogram {
+  position: relative;
+  z-index: 1;
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: transform 0.6s var(--ease);
+}
+
+.project-card:hover .project-monogram {
+  transform: scale(1.06);
+}
+
 .project-card-category {
   position: absolute;
   top: 14px;

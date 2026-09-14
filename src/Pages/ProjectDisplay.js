@@ -77,11 +77,13 @@ function ProjectDisplay() {
           )}
         </Reveal>
 
-        <Reveal delay={0.08}>
-          <div className="project-hero-image">
-            <img src={project.image} alt={`${project.name} preview`} />
-          </div>
-        </Reveal>
+        {project.image && (
+          <Reveal delay={0.08}>
+            <div className="project-hero-image">
+              <img src={project.image} alt={`${project.name} preview`} />
+            </div>
+          </Reveal>
+        )}
 
         <div className="project-detail-body">
           <Reveal className="project-detail-main">
