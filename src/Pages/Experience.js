@@ -23,8 +23,7 @@ function Experience() {
           <a
             className="btn btn--primary experience-resume"
             href={profile.resume}
-            target="_blank"
-            rel="noopener noreferrer"
+            download={profile.resumeFileName}
           >
             <DownloadIcon size={18} /> Download resume
           </a>

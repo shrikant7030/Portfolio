@@ -1,18 +1,22 @@
 import portfolioImg from "../assets/imagenew.jpg";
 import taskrunnrImg from "../assets/taskrunnr.png";
 import kriyaImg from "../assets/kriya.png";
-import marketplaceImg from "../assets/marketplace.png";
 
 /**
- * `github` / `live` are optional — leave them out (or null) for client work you
- * cannot share and the buttons simply will not render.
+ * `github` / `live` are optional — leave them `null` for client work you cannot
+ * share and the buttons simply will not render.
+ *
+ * `image` is optional too. With `null`, the card falls back to a generated
+ * monogram tile and the case study drops its hero image, so a project without a
+ * screenshot still looks deliberate. Import the file and set it here when you
+ * have a real screenshot to drop in.
  */
 export const projects = [
   {
     slug: "packtrak-legacy-modernization",
     name: "Packtrak — Legacy Modernization",
     tagline: "Moving a 20-year-old logistics platform off Informix without downtime.",
-    image: marketplaceImg,
+    image: null,
     category: "Enterprise",
     role: "Module Lead",
     period: "2023 — Present",
@@ -34,7 +38,7 @@ export const projects = [
     slug: "shure-associate-portal",
     name: "Shure Associate Portal",
     tagline: "A role-aware internal portal built on NestJS and DynamoDB.",
-    image: marketplaceImg,
+    image: null,
     category: "Enterprise",
     role: "Module Lead",
     period: "2023 — 2024",
@@ -48,7 +52,7 @@ export const projects = [
       "Modelled data across DynamoDB and MySQL depending on access pattern.",
       "Automated DynamoDB test-data cleanup, improving QA efficiency by 25%.",
     ],
-    tech: ["NestJS", "TypeScript", "DynamoDB", "MySQL", "Jest", "RBAC", "Microservices"],
+    tech: ["NestJS", "TypeScript", "AWS", "DynamoDB", "MySQL", "Jest", "RBAC", "Microservices"],
     github: null,
     live: null,
   },
@@ -99,7 +103,7 @@ export const projects = [
     slug: "order-management-system",
     name: "Order Management System",
     tagline: "Full-stack order lifecycle with automated email workflows.",
-    image: marketplaceImg,
+    image: null,
     category: "Full Stack",
     role: "Backend Developer",
     period: "2023",
