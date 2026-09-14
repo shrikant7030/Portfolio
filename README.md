@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Shrikant Goski — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React single-page portfolio for a backend & cloud engineer. Dark-first design
+system, light theme toggle, scroll-reveal motion, and a case-study page per project.
 
-## Available Scripts
+**Live:** _add your deployment URL here_
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Area       | Choice                                               |
+| ---------- | ---------------------------------------------------- |
+| Framework  | React 18 (Create React App)                          |
+| Routing    | React Router 6                                       |
+| Motion     | Framer Motion (respects `prefers-reduced-motion`)    |
+| Styling    | Hand-written CSS with custom-property design tokens  |
+| Deployment | Vercel (`vercel.json` handles SPA rewrites)          |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Running it
 
-### `npm test`
+```bash
+npm install
+npm start        # http://localhost:3000
+npm run build    # production bundle in build/
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project structure
 
-### `npm run build`
+```
+src/
+├── App.js                  # routes, theme provider, layout shell
+├── App.css                 # design tokens + shared component classes
+├── context/ThemeContext.js # dark/light theme, persisted to localStorage
+├── data/
+│   ├── profile.js          # bio, skills, achievements, experience, testimonials
+│   └── projects.js         # project case studies
+├── components/
+│   ├── Icons.js            # shared inline SVG icon set
+│   ├── Navbar.js           # sticky nav, theme toggle, scroll progress
+│   ├── Footer.js
+│   ├── Reveal.js           # scroll-into-view fade wrapper
+│   ├── ScrollToTop.js      # route-change scroll handling (incl. #hash)
+│   ├── ProjectItem.js
+│   └── sections/           # Hero, Skills, Impact, Testimonials, Contact
+├── Pages/                  # Home, Projects, ProjectDisplay, Experience, NotFound
+└── styles/                 # one stylesheet per page/component
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Keeping the content up to date
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Everything on the site reads from two files — you should rarely need to touch JSX.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `src/data/profile.js`
 
-### `npm run eject`
+- **`CAREER_START`** — your first working day. The `5+ years` figure in the hero
+  and on the Experience page is derived from it, so it never goes stale.
+- **`profile`** — name, headline, contact details, social links, resume path.
+- **`skillGroups`** — grouped skills with a 0–100 `level` that drives the
+  proficiency bars. `accent` picks the card colour (`indigo`, `cyan`, `violet`,
+  `emerald`, `amber`, `rose`).
+- **`achievements`** — the "Work that moved a number" cards. Keep them
+  outcome-shaped: a metric, a short title, one sentence of context.
+- **`experiences`** — the Experience timeline. Set `current: true` on your
+  present role to get the live badge.
+- **`testimonials`** — **currently placeholder text.** Replace the entries with
+  real LinkedIn recommendations or manager quotes and drop the
+  `placeholder: true` flag. An empty array hides the section entirely.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `src/data/projects.js`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+One entry per case study. `github` and `live` are optional — leave them `null`
+for client work you cannot share and those buttons simply will not render.
+`slug` becomes the URL (`/projects/<slug>`), so avoid changing it on a project
+you have already shared a link to.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Before you deploy
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Add your resume** at `public/resume.pdf` — the Download resume buttons in
+   the navbar, hero and Experience page all point there.
+2. **Replace the testimonial placeholders** in `src/data/profile.js`.
+3. **Swap the project screenshots** in `src/assets/` — three of the entries
+   currently share the same placeholder image.
+4. **Add GitHub/live links** to any project in `src/data/projects.js` you can
+   share publicly.
+5. Optionally update the favicon and `logo192/512.png` in `public/` — they are
+   still the Create React App defaults, and `logo512.png` is used as the social
+   share image.
 
-## Learn More
+## Accessibility & performance notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- All animation is disabled under `prefers-reduced-motion: reduce`.
+- The theme is applied by an inline script in `public/index.html` before first
+  paint, so there is no light flash on load for dark-theme visitors.
+- Icon-only links carry `aria-label`s; skill bars expose `role="progressbar"`.
+- Images below the fold are lazy-loaded.
