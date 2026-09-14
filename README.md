@@ -65,6 +65,8 @@ Everything on the site reads from two files — you should rarely need to touch 
   present role to get the live badge.
 - **`awards`** — newest first. The hero stat tile counts and pluralises this
   array automatically, so adding an award is a one-place edit.
+- **`resume` / `resumeFileName`** — the PDF served from `public/` and the
+  filename the browser saves it as. Every Download resume button reads these.
 
 ### `src/data/projects.js`
 
@@ -91,6 +93,10 @@ and set `image:` to that import.
 4. Optionally update the favicon and `logo192/512.png` in `public/` — they are
    still the Create React App defaults, and `logo512.png` is used as the social
    share image.
+
+The resume is already in place at `public/Shrikant_Goski_Resume.pdf`. Replace
+that file to publish a new version — the filename is referenced in
+`src/data/profile.js`, so keep the name or update it there too.
 
 ## Accessibility & performance notes
 

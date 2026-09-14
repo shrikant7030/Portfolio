@@ -19,7 +19,10 @@ export const profile = {
   phone: "+91 9561252643",
   linkedin: "https://www.linkedin.com/in/shrikant-goski-68455016b",
   github: "https://github.com/shrikant7030",
-  resume: "/resume.pdf",
+  // Lives in public/, so it is served as-is. `resumeFileName` is what the
+  // browser saves it as when the Download resume buttons are clicked.
+  resume: "/Shrikant_Goski_Resume.pdf",
+  resumeFileName: "Shrikant_Goski_Resume.pdf",
   summary:
     "I design and ship scalable backend systems — microservices, REST APIs and cloud-native automation — for enterprise clients. Most of my work lives in Node.js, NestJS and PostgreSQL, running on AWS and Azure.",
 };

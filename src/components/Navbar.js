@@ -67,8 +67,7 @@ function Navbar() {
           <a
             className="btn btn--primary navbar-resume navbar-resume--mobile"
             href={profile.resume}
-            target="_blank"
-            rel="noopener noreferrer"
+            download={profile.resumeFileName}
           >
             <DownloadIcon size={17} /> Resume
           </a>
@@ -88,8 +87,7 @@ function Navbar() {
           <a
             className="btn btn--primary navbar-resume"
             href={profile.resume}
-            target="_blank"
-            rel="noopener noreferrer"
+            download={profile.resumeFileName}
           >
             <DownloadIcon size={17} /> Resume
           </a>
