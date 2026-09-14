@@ -2,42 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#080b14" />
+
+    <title>Shrikant Goski — Backend &amp; Cloud Engineer</title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Shrikant Goski is a backend and cloud engineer in Bengaluru building scalable microservices, REST APIs and cloud automation with Node.js, NestJS, PostgreSQL, AWS and Azure."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta name="author" content="Shrikant Goski" />
+    <meta
+      name="keywords"
+      content="Shrikant Goski, backend engineer, Node.js developer, NestJS, PostgreSQL, AWS, Azure, microservices, Bengaluru"
+    />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shrikant Goski — Backend &amp; Cloud Engineer" />
+    <meta
+      property="og:description"
+      content="Backend and cloud engineer building scalable microservices, REST APIs and cloud automation with Node.js, NestJS, PostgreSQL, AWS and Azure."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shrikant Goski — Backend &amp; Cloud Engineer" />
+    <meta
+      name="twitter:description"
+      content="Backend and cloud engineer building scalable microservices, REST APIs and cloud automation."
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apply the saved theme before first paint so there is no light flash. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("portfolio-theme");
+          document.documentElement.setAttribute(
+            "data-theme",
+            stored === "light" ? "light" : "dark"
+          );
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
