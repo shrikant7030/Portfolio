@@ -83,12 +83,14 @@ and set `image:` to that import.
 
 ## Before you deploy
 
-1. **Add the missing project screenshots** — Packtrak, Shure Associate Portal
+1. **Add your resume** at `public/resume.pdf` — the Download resume buttons in
+   the navbar, hero and Experience page all point there.
+2. **Add the missing project screenshots** — Packtrak, Shure Associate Portal
    and Order Management System have `image: null` and render a monogram tile
    until you supply one.
-2. **Add GitHub/live links** to any project in `src/data/projects.js` you can
+3. **Add GitHub/live links** to any project in `src/data/projects.js` you can
    share publicly.
-3. Optionally update the favicon and `logo192/512.png` in `public/` — they are
+4. Optionally update the favicon and `logo192/512.png` in `public/` — they are
    still the Create React App defaults, and `logo512.png` is used as the social
    share image.
 
